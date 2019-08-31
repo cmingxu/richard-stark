@@ -4,14 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel lib -d dist",
+    "start": "watch 'npm run build && nodemon dist/index.js' ./lib",
+    "serve": "nodemon dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "connect": "^3.7.0"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/register": "^7.4.0",
+    "babel-polyfill": "^6.26.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "eslint": "^6.2.1"
+    "eslint": "^6.2.1",
+    "nodemon": "^1.19.1",
+    "puppeteer": "^1.19.0",
+    "watch": "^1.0.2"
   }
 }
